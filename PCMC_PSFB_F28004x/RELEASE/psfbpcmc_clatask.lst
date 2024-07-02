@@ -1,0 +1,674 @@
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320x280xx Control Law Accelerator G3 C/C++ Codegen                               PC v22.6.1.LTS *
+       3              ;* Date/Time created: Tue Jul  2 19:04:16 2024                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --abi=eabi --cla_support=cla2 --diag_wrap=off --float_support=fpu32 --hll_source=on --
+       6              
+       7              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       8                      .dwattr $C$DW$CU, DW_AT_name("../psfbpcmc_clatask.cla")
+       9                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320x280xx Control Law Accelerator G3 C/C++ Codegen PC v22.6.1
+      10                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      11                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\Users\Lenovo\workspace_v13\PCMC_PSFB_F28004x\RELEASE")
+      12              ;       C:\ti\ccs1260\ccs\tools\compiler\ti-cgt-c2000_22.6.1.LTS\bin\optcla.exe C:\\Users\\Lenovo\\AppData\\L
+      13              ;       C:\ti\ccs1260\ccs\tools\compiler\ti-cgt-c2000_22.6.1.LTS\bin\aciacla.exe -@C:\\Users\\Lenovo\\AppData
+      14 00000000               .sect   "Cla1Prog:Cla1Task7"
+      15                      .align   2
+      16                      .clink
+      17                      .global Cla1Task7
+      18              
+      19              $C$DW$1 .dwtag  DW_TAG_subprogram
+      20                      .dwattr $C$DW$1, DW_AT_name("Cla1Task7")
+      21                      .dwattr $C$DW$1, DW_AT_low_pc(Cla1Task7)
+      22                      .dwattr $C$DW$1, DW_AT_high_pc(0x00)
+      23                      .dwattr $C$DW$1, DW_AT_linkage_name("Cla1Task7")
+      24                      .dwattr $C$DW$1, DW_AT_external
+      25                      .dwattr $C$DW$1, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+      26                      .dwattr $C$DW$1, DW_AT_decl_line(0x78)
+      27                      .dwattr $C$DW$1, DW_AT_decl_column(0x22)
+      28                      .dwattr $C$DW$1, DW_AT_TI_interrupt
+      29                      .dwattr $C$DW$1, DW_AT_TI_max_frame_size(0x00)
+      30                      .dwpsn  file "../psfbpcmc_clatask.cla",line 121,column 1,is_stmt,address Cla1Task7,isa 0
+      31              
+      32                      .dwfde $C$DW$CIE, Cla1Task7
+      33              
+      34              ;***************************************************************
+      35              ;* FNAME: Cla1Task7                     FR SIZE:   0           *
+      36              ;*                                                             *
+      37              ;* FUNCTION ENVIRONMENT                                        *
+      38              ;*                                                             *
+      39              ;* FUNCTION PROPERTIES                                         *
+      40              ;*                            0 Auto,  0 SOE     *
+      41              ;***************************************************************
+      42              
+      43 00000000       Cla1Task7:
+      44 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+      45 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+      46 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+      47              $C$DW$2 .dwtag  DW_TAG_TI_branch
+      48                      .dwattr $C$DW$2, DW_AT_low_pc(0x00)
+      49                      .dwattr $C$DW$2, DW_AT_TI_return
+      50              
+      51 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    2
+
+      52                      ; ireturn occurs ; [] 
+      53                      .dwattr $C$DW$1, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+      54                      .dwattr $C$DW$1, DW_AT_TI_end_line(0x7b)
+      55                      .dwattr $C$DW$1, DW_AT_TI_end_column(0x01)
+      56                      .dwendentry
+      57                      .dwendtag $C$DW$1
+      58              
+      59 00000000               .sect   "Cla1Prog:Cla1Task6"
+      60                      .align   2
+      61                      .clink
+      62                      .global Cla1Task6
+      63              
+      64              $C$DW$3 .dwtag  DW_TAG_subprogram
+      65                      .dwattr $C$DW$3, DW_AT_name("Cla1Task6")
+      66                      .dwattr $C$DW$3, DW_AT_low_pc(Cla1Task6)
+      67                      .dwattr $C$DW$3, DW_AT_high_pc(0x00)
+      68                      .dwattr $C$DW$3, DW_AT_linkage_name("Cla1Task6")
+      69                      .dwattr $C$DW$3, DW_AT_external
+      70                      .dwattr $C$DW$3, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+      71                      .dwattr $C$DW$3, DW_AT_decl_line(0x6a)
+      72                      .dwattr $C$DW$3, DW_AT_decl_column(0x22)
+      73                      .dwattr $C$DW$3, DW_AT_TI_interrupt
+      74                      .dwattr $C$DW$3, DW_AT_TI_max_frame_size(0x00)
+      75                      .dwpsn  file "../psfbpcmc_clatask.cla",line 107,column 1,is_stmt,address Cla1Task6,isa 0
+      76              
+      77                      .dwfde $C$DW$CIE, Cla1Task6
+      78              
+      79              ;***************************************************************
+      80              ;* FNAME: Cla1Task6                     FR SIZE:   0           *
+      81              ;*                                                             *
+      82              ;* FUNCTION ENVIRONMENT                                        *
+      83              ;*                                                             *
+      84              ;* FUNCTION PROPERTIES                                         *
+      85              ;*                            0 Auto,  0 SOE     *
+      86              ;***************************************************************
+      87              
+      88 00000000       Cla1Task6:
+      89 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+      90 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+      91 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+      92              $C$DW$4 .dwtag  DW_TAG_TI_branch
+      93                      .dwattr $C$DW$4, DW_AT_low_pc(0x00)
+      94                      .dwattr $C$DW$4, DW_AT_TI_return
+      95              
+      96 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+      97                      ; ireturn occurs ; [] 
+      98                      .dwattr $C$DW$3, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+      99                      .dwattr $C$DW$3, DW_AT_TI_end_line(0x6d)
+     100                      .dwattr $C$DW$3, DW_AT_TI_end_column(0x01)
+     101                      .dwendentry
+     102                      .dwendtag $C$DW$3
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    3
+
+     103              
+     104 00000000               .sect   "Cla1Prog:Cla1Task5"
+     105                      .align   2
+     106                      .clink
+     107                      .global Cla1Task5
+     108              
+     109              $C$DW$5 .dwtag  DW_TAG_subprogram
+     110                      .dwattr $C$DW$5, DW_AT_name("Cla1Task5")
+     111                      .dwattr $C$DW$5, DW_AT_low_pc(Cla1Task5)
+     112                      .dwattr $C$DW$5, DW_AT_high_pc(0x00)
+     113                      .dwattr $C$DW$5, DW_AT_linkage_name("Cla1Task5")
+     114                      .dwattr $C$DW$5, DW_AT_external
+     115                      .dwattr $C$DW$5, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+     116                      .dwattr $C$DW$5, DW_AT_decl_line(0x5c)
+     117                      .dwattr $C$DW$5, DW_AT_decl_column(0x22)
+     118                      .dwattr $C$DW$5, DW_AT_TI_interrupt
+     119                      .dwattr $C$DW$5, DW_AT_TI_max_frame_size(0x00)
+     120                      .dwpsn  file "../psfbpcmc_clatask.cla",line 93,column 1,is_stmt,address Cla1Task5,isa 0
+     121              
+     122                      .dwfde $C$DW$CIE, Cla1Task5
+     123              
+     124              ;***************************************************************
+     125              ;* FNAME: Cla1Task5                     FR SIZE:   0           *
+     126              ;*                                                             *
+     127              ;* FUNCTION ENVIRONMENT                                        *
+     128              ;*                                                             *
+     129              ;* FUNCTION PROPERTIES                                         *
+     130              ;*                            0 Auto,  0 SOE     *
+     131              ;***************************************************************
+     132              
+     133 00000000       Cla1Task5:
+     134 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+     135 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+     136 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+     137              $C$DW$6 .dwtag  DW_TAG_TI_branch
+     138                      .dwattr $C$DW$6, DW_AT_low_pc(0x00)
+     139                      .dwattr $C$DW$6, DW_AT_TI_return
+     140              
+     141 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+     142                      ; ireturn occurs ; [] 
+     143                      .dwattr $C$DW$5, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+     144                      .dwattr $C$DW$5, DW_AT_TI_end_line(0x5f)
+     145                      .dwattr $C$DW$5, DW_AT_TI_end_column(0x01)
+     146                      .dwendentry
+     147                      .dwendtag $C$DW$5
+     148              
+     149 00000000               .sect   "Cla1Prog:Cla1Task4"
+     150                      .align   2
+     151                      .clink
+     152                      .global Cla1Task4
+     153              
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    4
+
+     154              $C$DW$7 .dwtag  DW_TAG_subprogram
+     155                      .dwattr $C$DW$7, DW_AT_name("Cla1Task4")
+     156                      .dwattr $C$DW$7, DW_AT_low_pc(Cla1Task4)
+     157                      .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+     158                      .dwattr $C$DW$7, DW_AT_linkage_name("Cla1Task4")
+     159                      .dwattr $C$DW$7, DW_AT_external
+     160                      .dwattr $C$DW$7, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+     161                      .dwattr $C$DW$7, DW_AT_decl_line(0x4e)
+     162                      .dwattr $C$DW$7, DW_AT_decl_column(0x22)
+     163                      .dwattr $C$DW$7, DW_AT_TI_interrupt
+     164                      .dwattr $C$DW$7, DW_AT_TI_max_frame_size(0x00)
+     165                      .dwpsn  file "../psfbpcmc_clatask.cla",line 79,column 1,is_stmt,address Cla1Task4,isa 0
+     166              
+     167                      .dwfde $C$DW$CIE, Cla1Task4
+     168              
+     169              ;***************************************************************
+     170              ;* FNAME: Cla1Task4                     FR SIZE:   0           *
+     171              ;*                                                             *
+     172              ;* FUNCTION ENVIRONMENT                                        *
+     173              ;*                                                             *
+     174              ;* FUNCTION PROPERTIES                                         *
+     175              ;*                            0 Auto,  0 SOE     *
+     176              ;***************************************************************
+     177              
+     178 00000000       Cla1Task4:
+     179 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+     180 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+     181 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+     182              $C$DW$8 .dwtag  DW_TAG_TI_branch
+     183                      .dwattr $C$DW$8, DW_AT_low_pc(0x00)
+     184                      .dwattr $C$DW$8, DW_AT_TI_return
+     185              
+     186 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+     187                      ; ireturn occurs ; [] 
+     188                      .dwattr $C$DW$7, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+     189                      .dwattr $C$DW$7, DW_AT_TI_end_line(0x51)
+     190                      .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     191                      .dwendentry
+     192                      .dwendtag $C$DW$7
+     193              
+     194 00000000               .sect   "Cla1Prog:Cla1Task3"
+     195                      .align   2
+     196                      .clink
+     197                      .global Cla1Task3
+     198              
+     199              $C$DW$9 .dwtag  DW_TAG_subprogram
+     200                      .dwattr $C$DW$9, DW_AT_name("Cla1Task3")
+     201                      .dwattr $C$DW$9, DW_AT_low_pc(Cla1Task3)
+     202                      .dwattr $C$DW$9, DW_AT_high_pc(0x00)
+     203                      .dwattr $C$DW$9, DW_AT_linkage_name("Cla1Task3")
+     204                      .dwattr $C$DW$9, DW_AT_external
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    5
+
+     205                      .dwattr $C$DW$9, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+     206                      .dwattr $C$DW$9, DW_AT_decl_line(0x40)
+     207                      .dwattr $C$DW$9, DW_AT_decl_column(0x22)
+     208                      .dwattr $C$DW$9, DW_AT_TI_interrupt
+     209                      .dwattr $C$DW$9, DW_AT_TI_max_frame_size(0x00)
+     210                      .dwpsn  file "../psfbpcmc_clatask.cla",line 65,column 1,is_stmt,address Cla1Task3,isa 0
+     211              
+     212                      .dwfde $C$DW$CIE, Cla1Task3
+     213              
+     214              ;***************************************************************
+     215              ;* FNAME: Cla1Task3                     FR SIZE:   0           *
+     216              ;*                                                             *
+     217              ;* FUNCTION ENVIRONMENT                                        *
+     218              ;*                                                             *
+     219              ;* FUNCTION PROPERTIES                                         *
+     220              ;*                            0 Auto,  0 SOE     *
+     221              ;***************************************************************
+     222              
+     223 00000000       Cla1Task3:
+     224 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+     225 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+     226 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+     227              $C$DW$10        .dwtag  DW_TAG_TI_branch
+     228                      .dwattr $C$DW$10, DW_AT_low_pc(0x00)
+     229                      .dwattr $C$DW$10, DW_AT_TI_return
+     230              
+     231 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+     232                      ; ireturn occurs ; [] 
+     233                      .dwattr $C$DW$9, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+     234                      .dwattr $C$DW$9, DW_AT_TI_end_line(0x43)
+     235                      .dwattr $C$DW$9, DW_AT_TI_end_column(0x01)
+     236                      .dwendentry
+     237                      .dwendtag $C$DW$9
+     238              
+     239 00000000               .sect   "Cla1Prog:Cla1Task2"
+     240                      .align   2
+     241                      .clink
+     242                      .global Cla1Task2
+     243              
+     244              $C$DW$11        .dwtag  DW_TAG_subprogram
+     245                      .dwattr $C$DW$11, DW_AT_name("Cla1Task2")
+     246                      .dwattr $C$DW$11, DW_AT_low_pc(Cla1Task2)
+     247                      .dwattr $C$DW$11, DW_AT_high_pc(0x00)
+     248                      .dwattr $C$DW$11, DW_AT_linkage_name("Cla1Task2")
+     249                      .dwattr $C$DW$11, DW_AT_external
+     250                      .dwattr $C$DW$11, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+     251                      .dwattr $C$DW$11, DW_AT_decl_line(0x32)
+     252                      .dwattr $C$DW$11, DW_AT_decl_column(0x22)
+     253                      .dwattr $C$DW$11, DW_AT_TI_interrupt
+     254                      .dwattr $C$DW$11, DW_AT_TI_max_frame_size(0x00)
+     255                      .dwpsn  file "../psfbpcmc_clatask.cla",line 51,column 1,is_stmt,address Cla1Task2,isa 0
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    6
+
+     256              
+     257                      .dwfde $C$DW$CIE, Cla1Task2
+     258              
+     259              ;***************************************************************
+     260              ;* FNAME: Cla1Task2                     FR SIZE:   0           *
+     261              ;*                                                             *
+     262              ;* FUNCTION ENVIRONMENT                                        *
+     263              ;*                                                             *
+     264              ;* FUNCTION PROPERTIES                                         *
+     265              ;*                            0 Auto,  0 SOE     *
+     266              ;***************************************************************
+     267              
+     268 00000000       Cla1Task2:
+     269 00000000 0000          MNOP      ; [CPU_FPU] 
+         00000001 7FA0 
+     270 00000002 0000          MNOP      ; [CPU_FPU] 
+         00000003 7FA0 
+     271 00000004 0000          MNOP      ; [CPU_FPU] 
+         00000005 7FA0 
+     272              $C$DW$12        .dwtag  DW_TAG_TI_branch
+     273                      .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     274                      .dwattr $C$DW$12, DW_AT_TI_return
+     275              
+     276 00000006 0000          MSTOP     ; [CPU_FPU] 
+         00000007 7F80 
+     277                      ; ireturn occurs ; [] 
+     278                      .dwattr $C$DW$11, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+     279                      .dwattr $C$DW$11, DW_AT_TI_end_line(0x35)
+     280                      .dwattr $C$DW$11, DW_AT_TI_end_column(0x01)
+     281                      .dwendentry
+     282                      .dwendtag $C$DW$11
+     283              
+     284 00000000               .sect   "Cla1Prog:Cla1Task1"
+     285                      .align   2
+     286                      .clink
+     287                      .global Cla1Task1
+     288              
+     289              $C$DW$13        .dwtag  DW_TAG_subprogram
+     290                      .dwattr $C$DW$13, DW_AT_name("Cla1Task1")
+     291                      .dwattr $C$DW$13, DW_AT_low_pc(Cla1Task1)
+     292                      .dwattr $C$DW$13, DW_AT_high_pc(0x00)
+     293                      .dwattr $C$DW$13, DW_AT_linkage_name("Cla1Task1")
+     294                      .dwattr $C$DW$13, DW_AT_external
+     295                      .dwattr $C$DW$13, DW_AT_decl_file("../psfbpcmc_clatask.cla")
+     296                      .dwattr $C$DW$13, DW_AT_decl_line(0x1d)
+     297                      .dwattr $C$DW$13, DW_AT_decl_column(0x22)
+     298                      .dwattr $C$DW$13, DW_AT_TI_interrupt
+     299                      .dwattr $C$DW$13, DW_AT_TI_max_frame_size(0x00)
+     300                      .dwpsn  file "../psfbpcmc_clatask.cla",line 30,column 1,is_stmt,address Cla1Task1,isa 0
+     301              
+     302                      .dwfde $C$DW$CIE, Cla1Task1
+     303              
+     304              ;***************************************************************
+     305              ;* FNAME: Cla1Task1                     FR SIZE:   0           *
+     306              ;*                                                             *
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    7
+
+     307              ;* FUNCTION ENVIRONMENT                                        *
+     308              ;*                                                             *
+     309              ;* FUNCTION PROPERTIES                                         *
+     310              ;*                            0 Auto,  0 SOE     *
+     311              ;***************************************************************
+     312              
+     313 00000000       Cla1Task1:
+     314                      .dwpsn  file "C:/ti/C2000Ware_DigitalPower_SDK_5_02_01_00/c2000ware/driverlib/f28004x/driverlib/epwm.
+     315 00000000 40AA          MMOVZ16   MR0,@0x40aa           ; [CPU_FPU] |4873| 
+         00000001 7580 
+     316 00000002 0001          MMOVXI    MR1,#1                ; [CPU_FPU] |4873| 
+         00000003 7881 
+     317 00000004 0004          MOR32     MR0,MR1,MR0           ; [CPU_FPU] |4873| 
+         00000005 7C80 
+     318 00000006 40AA          MMOV16    @0x40aa,MR0           ; [CPU_FPU] |4873| 
+         00000007 75C0 
+     319 00000008 0000          MNOP      ; [CPU_FPU] 
+         00000009 7FA0 
+     320 0000000a 0000          MNOP      ; [CPU_FPU] 
+         0000000b 7FA0 
+     321 0000000c 0000          MNOP      ; [CPU_FPU] 
+         0000000d 7FA0 
+     322              $C$DW$14        .dwtag  DW_TAG_TI_branch
+     323                      .dwattr $C$DW$14, DW_AT_low_pc(0x00)
+     324                      .dwattr $C$DW$14, DW_AT_TI_return
+     325              
+     326 0000000e 0000          MSTOP     ; [CPU_FPU] 
+         0000000f 7F80 
+     327                      ; ireturn occurs ; [] 
+     328                      .dwattr $C$DW$13, DW_AT_TI_end_file("../psfbpcmc_clatask.cla")
+     329                      .dwattr $C$DW$13, DW_AT_TI_end_line(0x27)
+     330                      .dwattr $C$DW$13, DW_AT_TI_end_column(0x01)
+     331                      .dwendentry
+     332                      .dwendtag $C$DW$13
+     333              
+     334                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     335              
+     336              ;***************************************************************
+     337              ;* DWARF CIE ENTRIES                                           *
+     338              ;***************************************************************
+     339              
+     340              $C$DW$CIE       .dwcie 7
+     341                      .dwcfi  cfa_register, 10
+     342                      .dwcfi  cfa_offset, 0
+     343                      .dwcfi  same_value, 5
+     344                      .dwendentry
+     345                      .dwendtag $C$DW$CU
+     346              
+     347              
+     348              ;***************************************************************
+     349              ;* TYPE INFORMATION                                            *
+     350              ;***************************************************************
+     351              
+     352              $C$DW$TU$2      .dwtag  DW_TAG_type_unit
+     353                      .dwmtype  $C$DW$T$2
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    8
+
+     354              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+     355                      .dwattr $C$DW$T$2, DW_AT_name("void")
+     356              
+     357                      .dwendtag $C$DW$TU$2
+     358              
+     359              
+     360              $C$DW$TU$4      .dwtag  DW_TAG_type_unit
+     361                      .dwmtype  $C$DW$T$4
+     362              $C$DW$T$4       .dwtag  DW_TAG_base_type
+     363                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     364                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+     365                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x02)
+     366              
+     367                      .dwendtag $C$DW$TU$4
+     368              
+     369              
+     370              $C$DW$TU$5      .dwtag  DW_TAG_type_unit
+     371                      .dwmtype  $C$DW$T$5
+     372              $C$DW$T$5       .dwtag  DW_TAG_base_type
+     373                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     374                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     375                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     376              
+     377                      .dwendtag $C$DW$TU$5
+     378              
+     379              
+     380              $C$DW$TU$6      .dwtag  DW_TAG_type_unit
+     381                      .dwmtype  $C$DW$T$6
+     382              $C$DW$T$6       .dwtag  DW_TAG_base_type
+     383                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     384                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     385                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     386              
+     387                      .dwendtag $C$DW$TU$6
+     388              
+     389              
+     390              $C$DW$TU$7      .dwtag  DW_TAG_type_unit
+     391                      .dwmtype  $C$DW$T$7
+     392              $C$DW$T$7       .dwtag  DW_TAG_base_type
+     393                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     394                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     395                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+     396              
+     397                      .dwendtag $C$DW$TU$7
+     398              
+     399              
+     400              $C$DW$TU$8      .dwtag  DW_TAG_type_unit
+     401                      .dwmtype  $C$DW$T$8
+     402              $C$DW$T$8       .dwtag  DW_TAG_base_type
+     403                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     404                      .dwattr $C$DW$T$8, DW_AT_name("short")
+     405                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+     406              
+     407                      .dwendtag $C$DW$TU$8
+     408              
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE    9
+
+     409              
+     410              $C$DW$TU$9      .dwtag  DW_TAG_type_unit
+     411                      .dwmtype  $C$DW$T$9
+     412              $C$DW$T$9       .dwtag  DW_TAG_base_type
+     413                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     414                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     415                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+     416              
+     417                      .dwendtag $C$DW$TU$9
+     418              
+     419              
+     420              $C$DW$TU$25     .dwtag  DW_TAG_type_unit
+     421                      .dwmtype  $C$DW$T$25
+     422              $C$DW$T$25      .dwtag  DW_TAG_typedef
+     423                      .dwattr $C$DW$T$25, DW_AT_name("__uint16_t")
+     424                      .dwattr $C$DW$T$25, DW_AT_type(*$C$DW$T$9)
+     425                      .dwattr $C$DW$T$25, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     426                      .dwattr $C$DW$T$25, DW_AT_decl_line(0x3c)
+     427                      .dwattr $C$DW$T$25, DW_AT_decl_column(0x1c)
+     428              
+     429                      .dwendtag $C$DW$TU$25
+     430              
+     431              
+     432              $C$DW$TU$26     .dwtag  DW_TAG_type_unit
+     433                      .dwmtype  $C$DW$T$26
+     434              $C$DW$T$26      .dwtag  DW_TAG_typedef
+     435                      .dwattr $C$DW$T$26, DW_AT_name("__uintptr_t")
+     436                      .dwattr $C$DW$T$26, DW_AT_type(*$C$DW$T$25)
+     437                      .dwattr $C$DW$T$26, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     438                      .dwattr $C$DW$T$26, DW_AT_decl_line(0x76)
+     439                      .dwattr $C$DW$T$26, DW_AT_decl_column(0x14)
+     440              
+     441                      .dwendtag $C$DW$TU$26
+     442              
+     443              
+     444              $C$DW$TU$27     .dwtag  DW_TAG_type_unit
+     445                      .dwmtype  $C$DW$T$27
+     446              $C$DW$T$27      .dwtag  DW_TAG_typedef
+     447                      .dwattr $C$DW$T$27, DW_AT_name("uintptr_t")
+     448                      .dwattr $C$DW$T$27, DW_AT_type(*$C$DW$T$26)
+     449                      .dwattr $C$DW$T$27, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     450                      .dwattr $C$DW$T$27, DW_AT_decl_line(0x54)
+     451                      .dwattr $C$DW$T$27, DW_AT_decl_column(0x16)
+     452              
+     453                      .dwendtag $C$DW$TU$27
+     454              
+     455              
+     456              $C$DW$TU$28     .dwtag  DW_TAG_type_unit
+     457                      .dwmtype  $C$DW$T$28
+     458              $C$DW$T$28      .dwtag  DW_TAG_typedef
+     459                      .dwattr $C$DW$T$28, DW_AT_name("uint16_t")
+     460                      .dwattr $C$DW$T$28, DW_AT_type(*$C$DW$T$25)
+     461                      .dwattr $C$DW$T$28, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     462                      .dwattr $C$DW$T$28, DW_AT_decl_line(0x41)
+     463                      .dwattr $C$DW$T$28, DW_AT_decl_column(0x15)
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE   10
+
+     464              
+     465                      .dwendtag $C$DW$TU$28
+     466              
+     467              
+     468              $C$DW$TU$10     .dwtag  DW_TAG_type_unit
+     469                      .dwmtype  $C$DW$T$10
+     470              $C$DW$T$10      .dwtag  DW_TAG_base_type
+     471                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     472                      .dwattr $C$DW$T$10, DW_AT_name("int")
+     473                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x02)
+     474              
+     475                      .dwendtag $C$DW$TU$10
+     476              
+     477              
+     478              $C$DW$TU$11     .dwtag  DW_TAG_type_unit
+     479                      .dwmtype  $C$DW$T$11
+     480              $C$DW$T$11      .dwtag  DW_TAG_base_type
+     481                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     482                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     483                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x02)
+     484              
+     485                      .dwendtag $C$DW$TU$11
+     486              
+     487              
+     488              $C$DW$TU$19     .dwtag  DW_TAG_type_unit
+     489                      .dwmtype  $C$DW$T$19
+     490              $C$DW$T$19      .dwtag  DW_TAG_typedef
+     491                      .dwattr $C$DW$T$19, DW_AT_name("__uint32_t")
+     492                      .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$11)
+     493                      .dwattr $C$DW$T$19, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     494                      .dwattr $C$DW$T$19, DW_AT_decl_line(0x3e)
+     495                      .dwattr $C$DW$T$19, DW_AT_decl_column(0x1c)
+     496              
+     497                      .dwendtag $C$DW$TU$19
+     498              
+     499              
+     500              $C$DW$TU$20     .dwtag  DW_TAG_type_unit
+     501                      .dwmtype  $C$DW$T$20
+     502              $C$DW$T$20      .dwtag  DW_TAG_typedef
+     503                      .dwattr $C$DW$T$20, DW_AT_name("uint32_t")
+     504                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+     505                      .dwattr $C$DW$T$20, DW_AT_decl_file("C:/ti/ccs1260/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include
+     506                      .dwattr $C$DW$T$20, DW_AT_decl_line(0x46)
+     507                      .dwattr $C$DW$T$20, DW_AT_decl_column(0x15)
+     508              
+     509                      .dwendtag $C$DW$TU$20
+     510              
+     511              
+     512              $C$DW$TU$12     .dwtag  DW_TAG_type_unit
+     513                      .dwmtype  $C$DW$T$12
+     514              $C$DW$T$12      .dwtag  DW_TAG_base_type
+     515                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     516                      .dwattr $C$DW$T$12, DW_AT_name("long")
+     517                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+     518              
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE   11
+
+     519                      .dwendtag $C$DW$TU$12
+     520              
+     521              
+     522              $C$DW$TU$13     .dwtag  DW_TAG_type_unit
+     523                      .dwmtype  $C$DW$T$13
+     524              $C$DW$T$13      .dwtag  DW_TAG_base_type
+     525                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     526                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     527                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+     528              
+     529                      .dwendtag $C$DW$TU$13
+     530              
+     531              
+     532              $C$DW$TU$14     .dwtag  DW_TAG_type_unit
+     533                      .dwmtype  $C$DW$T$14
+     534              $C$DW$T$14      .dwtag  DW_TAG_base_type
+     535                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     536                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+     537                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+     538              
+     539                      .dwendtag $C$DW$TU$14
+     540              
+     541              
+     542              $C$DW$TU$15     .dwtag  DW_TAG_type_unit
+     543                      .dwmtype  $C$DW$T$15
+     544              $C$DW$T$15      .dwtag  DW_TAG_base_type
+     545                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     546                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     547                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+     548              
+     549                      .dwendtag $C$DW$TU$15
+     550              
+     551              
+     552              $C$DW$TU$16     .dwtag  DW_TAG_type_unit
+     553                      .dwmtype  $C$DW$T$16
+     554              $C$DW$T$16      .dwtag  DW_TAG_base_type
+     555                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     556                      .dwattr $C$DW$T$16, DW_AT_name("float")
+     557                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+     558              
+     559                      .dwendtag $C$DW$TU$16
+     560              
+     561              
+     562              $C$DW$TU$17     .dwtag  DW_TAG_type_unit
+     563                      .dwmtype  $C$DW$T$17
+     564              $C$DW$T$17      .dwtag  DW_TAG_base_type
+     565                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     566                      .dwattr $C$DW$T$17, DW_AT_name("double")
+     567                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x04)
+     568              
+     569                      .dwendtag $C$DW$TU$17
+     570              
+     571              
+     572              $C$DW$TU$18     .dwtag  DW_TAG_type_unit
+     573                      .dwmtype  $C$DW$T$18
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+psfbpcmc_clatask.asm                                                 PAGE   12
+
+     574              $C$DW$T$18      .dwtag  DW_TAG_base_type
+     575                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     576                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+     577                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+     578              
+     579                      .dwendtag $C$DW$TU$18
+     580              
+
+No Assembly Errors, No Assembly Warnings

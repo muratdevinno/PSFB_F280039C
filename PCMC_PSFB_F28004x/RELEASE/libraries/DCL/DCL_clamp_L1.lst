@@ -1,0 +1,129 @@
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:17 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_clamp_L1.asm                                    PAGE    1
+
+       1              ; DCL_clamp_L1.asm - clamps output from immediate ARMA controller on CLA
+       2              ;
+       3              ;;#############################################################################
+       4              ;;!
+       5              ;;! Copyright: Copyright (C) 2023 Texas Instruments Incorporated -
+       6              ;;!     All rights reserved not granted herein.
+       7              ;;!     Limited License.
+       8              ;;!
+       9              ;;! Texas Instruments Incorporated grants a world-wide, royalty-free,
+      10              ;;! non-exclusive license under copyrights and patents it now or hereafter
+      11              ;;! owns or controls to make, have made, use, import, offer to sell and sell
+      12              ;;! ("Utilize") this software subject to the terms herein. With respect to the
+      13              ;;! foregoing patent license, such license is granted solely to the extent that
+      14              ;;! any such patent is necessary to Utilize the software alone. The patent
+      15              ;;! license shall not apply to any combinations which include this software,
+      16              ;;! other than combinations with devices manufactured by or for TI 
+      17              ;;! ("TI Devices").
+      18              ;;! No hardware patent is licensed hereunder.
+      19              ;;!
+      20              ;;! Redistributions must preserve existing copyright notices and reproduce this
+      21              ;;! license (including the above copyright notice and the disclaimer and
+      22              ;;! (if applicable) source code license limitations below) in the documentation
+      23              ;;!  and/or other materials provided with the distribution.
+      24              ;;!
+      25              ;;! Redistribution and use in binary form, without modification, are permitted
+      26              ;;! provided that the following conditions are met:
+      27              ;;!
+      28              ;;! * No reverse engineering, decompilation, or disassembly of this software is 
+      29              ;;! permitted with respect to any software provided in binary form.
+      30              ;;! * Any redistribution and use are licensed by TI for use only 
+      31              ;;!   with TI Devices.
+      32              ;;! * Nothing shall obligate TI to provide you with source code for the 
+      33              ;;!   software licensed and provided to you in object code.
+      34              ;;!
+      35              ;;! If software source code is provided to you, modification and redistribution
+      36              ;;! of the source code are permitted provided that the following conditions 
+      37              ;;! are met:
+      38              ;;!
+      39              ;;! * any redistribution and use of the source code, including any resulting
+      40              ;;!   derivative works, are licensed by TI for use only with TI Devices.
+      41              ;;! * any redistribution and use of any object code compiled from the source
+      42              ;;!   code and any resulting derivative works, are licensed by TI for use 
+      43              ;;!   only with TI Devices.
+      44              ;;!
+      45              ;;! Neither the name of Texas Instruments Incorporated nor the names of its
+      46              ;;! suppliers may be used to endorse or promote products derived from this 
+      47              ;;! software without specific prior written permission.
+      48              ;;#############################################################################
+      49              
+      50              
+      51                        .if $defined(__TI_EABI__)
+      52                              .if __TI_EABI__
+      53                              .asg    DCL_runClamp_L1, _DCL_runClamp_L1
+      54                              .endif
+      55                    .endif
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:17 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_clamp_L1.asm                                    PAGE    2
+
+      56              
+      57                              .global _DCL_runClamp_L1
+      58                              .def    __cla_DCL_clamp_L1_sp
+      59              
+      60        0004  SIZEOF_LFRAME           .set    4
+      61        0000  LFRAME_MR3                      .set    0
+      62        0002  LFRAME_ONE                      .set    2
+      63              
+      64                              .align  2
+      65 00000000       __cla_DCL_clamp_L1_sp   .usect ".scratchpad:Cla1Prog:_DCL_clamp_L1_LSECT", SIZEOF_LFRAME, 0, 1
+      66                              .asg     __cla_DCL_clamp_L1_sp, LFRAME
+      67 00000000                       .sect   "Cla1Prog:_DCL_clamp_L1_LSECT"
+      68              
+      69              ; This function saturates an input data value to defined upper & lower limits.
+      70              ; If the input data lies definitely within limits the function returns 0.0f,
+      71              ; otherwise it returns 1.0f.  The return value can be used by the pre-computed
+      72              ; controller to test for saturation.
+      73              ; i.e. return 0.0f if (Umin < data < Umax), otherwise return 1.0f
+      74              ; Returns 1.0f if data lies at the boundary: (data == Umax) or (data == Umin).
+      75              ; Returns 1.0f if limits are invalid: (Umax < Umin).
+      76              
+      77              ; C prototype: float DCL_runClamp_L1(float *data, float Umax, float Umin)
+      78              ; argument 1 = *data: address of input data [MAR0]
+      79              ; argument 2 = Umax : upper limit [MR0]
+      80              ; argument 3 = Umin : lower limit [MR1]
+      81              ; return = float : 1.0f = clamped, 0.0f = not clamped [MR0]
+      82              
+      83 00000000       _DCL_runClamp_L1:
+      84 00000000 0000!                 MMOV32          @LFRAME + LFRAME_MR3, MR3               ; save MR3
+         00000001 74F0 
+      85 00000002 3F80                  MMOVF32         MR3, #1.0f                                              ; MR3 = 1.0f
+         00000003 7843 
+      86 00000004 0002!                 MMOV32          @LFRAME + LFRAME_ONE, MR3               ; save constant
+         00000005 74F0 
+      87 00000006 0000                  MMOVF32         MR3, #0.0f                                              ; MR3 = 0.0f
+         00000007 7843 
+      88 00000008 0000                  MMOV32          MR2, *MAR0                                              ; MR2 = data
+         00000009 73E1 
+      89 0000000a 0008                  MMINF32         MR0, MR2                                                ; if (MR0 >  MR2)  {M
+         0000000b 7D40 
+      90 0000000c 0002!                 MMOV32          MR3, @LFRAME + LFRAME_ONE, LEQ  ; if (data >= Umax) {MR3 = 1.0f}
+         0000000d 7170 
+      91 0000000e 0004                  MMAXF32         MR0, MR1                                                ; if (MR0 < MR1) {MR0
+         0000000f 7D20 
+      92 00000010 0002!                 MMOV32          MR3, @LFRAME + LFRAME_ONE, LEQ  ; if (data <= Umin) {MR3 = 1.0f}
+         00000011 7170 
+      93 00000012 0000                  MRCNDD          UNC                                                             ; return call
+         00000013 79AE 
+      94 00000014 0000                  MMOV32          *MAR0, MR0                                              ; update data
+         00000015 74C1 
+      95 00000016 00FC                  MMOV32          MR0, MR3                                                ; return MR3
+         00000017 7AC0 
+      96 00000018 0000!                 MMOV32          MR3, @LFRAME + LFRAME_MR3               ; restore MR3
+         00000019 73F0 
+      97                              .unasg  LFRAME
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:17 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_clamp_L1.asm                                    PAGE    3
+
+      98              
+      99              ; end of file
+
+No Assembly Errors, No Assembly Warnings

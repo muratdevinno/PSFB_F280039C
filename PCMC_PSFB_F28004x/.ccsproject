@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVariant value="0:Eclipse-based"/>
+	<ccsVersion value="12.7.1"/>
+	<deviceVariant value="TMS320C28XX.TMS320F280049C"/>
+	<deviceFamily value="C2000"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="22.6.1.LTS"/>
+	<isElfFormat value="true"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=PCMC_PSFB.projectspec.PCMC_PSFB_F28004x"/>
+	<sourceLookupPath value="${C2000WARE_DLIB_ROOT}"/>
+	<origin value="C:\ti\C2000Ware_DigitalPower_SDK_5_02_01_00\solutions\tidm_02000\f28004x\ccs\PCMC_PSFB.projectspec"/>
+	<filesToOpen value="main.syscfg"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<isTargetManual value="false"/>
+</projectOptions>

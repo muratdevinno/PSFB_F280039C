@@ -1,0 +1,110 @@
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:17 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_clamp_C1.asm                                    PAGE    1
+
+       1              ; DCL_clamp_C1.asm - clamps output from immediate ARMA controller
+       2              ;
+       3              ;;#############################################################################
+       4              ;;!
+       5              ;;! Copyright: Copyright (C) 2023 Texas Instruments Incorporated -
+       6              ;;!     All rights reserved not granted herein.
+       7              ;;!     Limited License.
+       8              ;;!
+       9              ;;! Texas Instruments Incorporated grants a world-wide, royalty-free,
+      10              ;;! non-exclusive license under copyrights and patents it now or hereafter
+      11              ;;! owns or controls to make, have made, use, import, offer to sell and sell
+      12              ;;! ("Utilize") this software subject to the terms herein. With respect to the
+      13              ;;! foregoing patent license, such license is granted solely to the extent that
+      14              ;;! any such patent is necessary to Utilize the software alone. The patent
+      15              ;;! license shall not apply to any combinations which include this software,
+      16              ;;! other than combinations with devices manufactured by or for TI 
+      17              ;;! ("TI Devices").
+      18              ;;! No hardware patent is licensed hereunder.
+      19              ;;!
+      20              ;;! Redistributions must preserve existing copyright notices and reproduce this
+      21              ;;! license (including the above copyright notice and the disclaimer and
+      22              ;;! (if applicable) source code license limitations below) in the documentation
+      23              ;;!  and/or other materials provided with the distribution.
+      24              ;;!
+      25              ;;! Redistribution and use in binary form, without modification, are permitted
+      26              ;;! provided that the following conditions are met:
+      27              ;;!
+      28              ;;! * No reverse engineering, decompilation, or disassembly of this software is 
+      29              ;;! permitted with respect to any software provided in binary form.
+      30              ;;! * Any redistribution and use are licensed by TI for use only 
+      31              ;;!   with TI Devices.
+      32              ;;! * Nothing shall obligate TI to provide you with source code for the 
+      33              ;;!   software licensed and provided to you in object code.
+      34              ;;!
+      35              ;;! If software source code is provided to you, modification and redistribution
+      36              ;;! of the source code are permitted provided that the following conditions 
+      37              ;;! are met:
+      38              ;;!
+      39              ;;! * any redistribution and use of the source code, including any resulting
+      40              ;;!   derivative works, are licensed by TI for use only with TI Devices.
+      41              ;;! * any redistribution and use of any object code compiled from the source
+      42              ;;!   code and any resulting derivative works, are licensed by TI for use 
+      43              ;;!   only with TI Devices.
+      44              ;;!
+      45              ;;! Neither the name of Texas Instruments Incorporated nor the names of its
+      46              ;;! suppliers may be used to endorse or promote products derived from this 
+      47              ;;! software without specific prior written permission.
+      48              ;;#############################################################################
+      49              
+      50              
+      51                        .if $defined(__TI_EABI__)
+      52                              .if __TI_EABI__
+      53                              .asg    DCL_runClamp_C1, _DCL_runClamp_C1
+      54                              .endif
+      55                    .endif
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:17 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_clamp_C1.asm                                    PAGE    2
+
+      56              
+      57                              .global _DCL_runClamp_C1
+      58              
+      59 00000000                       .sect   "dclfuncs"
+      60              
+      61              ; This function saturates an input data value to defined upper & lower limits.
+      62              ; If the input data lies definitely within limits the function returns 0,
+      63              ; otherwise it returns 1.
+      64              ; i.e. return 0 if (lowerLim < data < upperLim), otherwise return 1.
+      65              
+      66              ; C prototype: uint16_t DCL_runClamp_C1(float *data, float Umax, float Umin)
+      67              ; argument 1 = *data: address of input data [XAR4]
+      68              ; argument 2 = Umax : upper limit [R0H]
+      69              ; argument 3 = Umin : lower limit [R1H]
+      70              ; return = integer : 1 = clamped, 0 = not clamped [AL]
+      71              
+      72                              .align  2
+      73              
+      74 00000000       _DCL_runClamp_C1:
+      75                              .asmfunc
+      76 00000000 5633                  ZAPA                                                            ; AL = 0
+      77 00000001 E2AF                  MOV32           R2H, *+XAR4[0]                  ; R2H = data
+         00000002 02C4 
+      78 00000003 E694                  CMPF32          R2H, R0H                                ; compare: data, Umax
+         00000004 0002 
+      79 00000005 AD14                  MOVST0          ZF, NF                                  ; copy flags: Z = ZF, N = NF
+      80 00000006 56B3                  MOVB            AL, #1, GEQ                             ; data >= Umax ---> AL = 1
+         00000007 01A9 
+      81 00000008 E6C4                  MOV32           R0H, R2H, LT                    ; data < Umax ---> R0H = data
+         00000009 0010 
+      82 0000000a E694                  CMPF32          R2H, R1H                                ; comapare: data, Umin
+         0000000b 000A 
+      83 0000000c AD14                  MOVST0          ZF, NF                                  ; copy flags: Z = ZF, N = NF
+      84 0000000d 56B5                  MOVB            AL, #1, LEQ                             ; data <= Umin ---> AL = 1
+         0000000e 01A9 
+      85 0000000f E6C4                  MOV32           R0H, R1H, LT                    ; data < Umin ---> R0H = Umin
+         00000010 0008 
+      86 00000011 E203                  MOV32           *+XAR4[0], R0H                  ; &data = R0H
+         00000012 00C4 
+      87 00000013 0006                  LRETR
+      88                              .endasmfunc
+      89              
+      90                              .end
+
+No Assembly Errors, No Assembly Warnings

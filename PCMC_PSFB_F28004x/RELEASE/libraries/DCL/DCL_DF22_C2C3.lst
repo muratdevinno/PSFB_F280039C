@@ -1,0 +1,169 @@
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_DF22_C2C3.asm                                   PAGE    1
+
+       1              ; DCL_DF22_C2C3.asm - Pre-computed Direct Form 2 implementation in second order
+       2              ;
+       3              ;;#############################################################################
+       4              ;;!
+       5              ;;! Copyright: Copyright (C) 2023 Texas Instruments Incorporated -
+       6              ;;!     All rights reserved not granted herein.
+       7              ;;!     Limited License.
+       8              ;;!
+       9              ;;! Texas Instruments Incorporated grants a world-wide, royalty-free,
+      10              ;;! non-exclusive license under copyrights and patents it now or hereafter
+      11              ;;! owns or controls to make, have made, use, import, offer to sell and sell
+      12              ;;! ("Utilize") this software subject to the terms herein. With respect to the
+      13              ;;! foregoing patent license, such license is granted solely to the extent that
+      14              ;;! any such patent is necessary to Utilize the software alone. The patent
+      15              ;;! license shall not apply to any combinations which include this software,
+      16              ;;! other than combinations with devices manufactured by or for TI 
+      17              ;;! ("TI Devices").
+      18              ;;! No hardware patent is licensed hereunder.
+      19              ;;!
+      20              ;;! Redistributions must preserve existing copyright notices and reproduce this
+      21              ;;! license (including the above copyright notice and the disclaimer and
+      22              ;;! (if applicable) source code license limitations below) in the documentation
+      23              ;;!  and/or other materials provided with the distribution.
+      24              ;;!
+      25              ;;! Redistribution and use in binary form, without modification, are permitted
+      26              ;;! provided that the following conditions are met:
+      27              ;;!
+      28              ;;! * No reverse engineering, decompilation, or disassembly of this software is 
+      29              ;;! permitted with respect to any software provided in binary form.
+      30              ;;! * Any redistribution and use are licensed by TI for use only 
+      31              ;;!   with TI Devices.
+      32              ;;! * Nothing shall obligate TI to provide you with source code for the 
+      33              ;;!   software licensed and provided to you in object code.
+      34              ;;!
+      35              ;;! If software source code is provided to you, modification and redistribution
+      36              ;;! of the source code are permitted provided that the following conditions 
+      37              ;;! are met:
+      38              ;;!
+      39              ;;! * any redistribution and use of the source code, including any resulting
+      40              ;;!   derivative works, are licensed by TI for use only with TI Devices.
+      41              ;;! * any redistribution and use of any object code compiled from the source
+      42              ;;!   code and any resulting derivative works, are licensed by TI for use 
+      43              ;;!   only with TI Devices.
+      44              ;;!
+      45              ;;! Neither the name of Texas Instruments Incorporated nor the names of its
+      46              ;;! suppliers may be used to endorse or promote products derived from this 
+      47              ;;! software without specific prior written permission.
+      48              ;;#############################################################################
+      49              
+      50              
+      51                        .if $defined(__TI_EABI__)
+      52                              .if __TI_EABI__
+      53                              .asg    DCL_runDF22_C2, _DCL_runDF22_C2
+      54                              .asg    DCL_runDF22_C3, _DCL_runDF22_C3
+      55                              .endif
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_DF22_C2C3.asm                                   PAGE    2
+
+      56                    .endif
+      57              
+      58        0000  FASTCR_DF22_C3  .set    0               ; set to 1 to enable shadowed context save/restore
+      59              
+      60                              .global _DCL_runDF22_C2
+      61                              .global _DCL_runDF22_C3
+      62              
+      63 00000000                       .sect   "dclfuncs"
+      64              
+      65              ; C prototype: float DCL_runDF22_C2(DCL_DF22 *p, float32_t ek)
+      66              ; argument 1 = *p : controller structure address [XAR4]
+      67              ; argument 2 = ek : controller input [R0H]
+      68              ; return = uk : controller output [R0H]
+      69              
+      70                              .align  2
+      71              
+      72 00000000       _DCL_runDF22_C2:
+      73                              .asmfunc
+      74 00000000 E2AF                  MOV32           R1H, *+XAR4[0]                  ; R1H = b0
+         00000001 01C4 
+      75 00000002 28A0                  MOV                     AR0, #0xA                               ; AR0 = 10
+         00000003 000A 
+      76 00000004 E700                  MPYF32          R0H, R0H, R1H                   ; R0H = ek * b0
+         00000005 0040 
+      77 00000006 E2AF                  MOV32           R1H, *+XAR4[AR0]                ; R1H = x1
+         00000007 0194 
+      78 00000008 E710                  ADDF32          R0H, R0H, R1H                   ; R0H = uk
+         00000009 0040 
+      79 0000000a 0006                  LRETR
+      80                              .endasmfunc
+      81              
+      82              ; C prototype: void DCL_runDF22_C3(DF22 *p, float ek, float uk)
+      83              ; argument 1 = *p : controller structure address [XAR4]
+      84              ; argument 2 = ek : controller input [R0H]
+      85              ; argument 3 = uk : u(k) output [R1H]
+      86              ; return: void
+      87              
+      88                              .align  2
+      89              
+      90 0000000c       _DCL_runDF22_C3:
+      91                              .asmfunc
+      92                      .if FASTCR_DF22_C3 = 0
+      93 0000000c E203                  MOV32           *SP++, R4H
+         0000000d 04BD 
+      94 0000000e E203                  MOV32           *SP++, R5H
+         0000000f 05BD 
+      95 00000010 E203                  MOV32           *SP++, R6H
+         00000011 06BD 
+      96 00000012 E203                  MOV32           *SP++, R7H
+         00000013 07BD 
+      97                      .else
+      98                              SAVE
+      99                      .endif
+     100 00000014 E2AF                  MOV32           R2H, *XAR4++                    ; XAR4 = &b1
+         00000015 0284 
+TMS320C2000 Assembler PC v22.6.1 Tue Jul  2 19:04:16 2024
+
+Copyright (c) 1996-2018 Texas Instruments Incorporated
+../libraries/DCL/DCL_DF22_C2C3.asm                                   PAGE    3
+
+     101 00000016 E2AF                  MOV32           R2H, *XAR4++                    ; R2H = b1
+         00000017 0284 
+     102 00000018 E300                  MPYF32          R3H, R2H, R0H                   ; R3H = v1
+         00000019 9C84 
+     103              ||              MOV32           R4H, *XAR4++                    ; R4H = b2
+     104 0000001a E301                  MPYF32          R5H, R4H, R0H                   ; R5H = v2
+         0000001b 2E84 
+     105              ||              MOV32           R6H, *XAR4++                    ; R6H = a1
+     106 0000001c E303                  MPYF32          R7H, R6H, R1H                   ; R7H = v3
+         0000001d B884 
+     107              ||              MOV32           R0H, *XAR4++                    ; R0H = a2, XAR4 = &x1
+     108 0000001e E302                  MPYF32          R0H, R0H, R1H                   ; R0H = v4
+         0000001f 02D4 
+     109              ||              MOV32           R2H, *+XAR4[2]                  ; R2H = x2
+     110 00000020 E710                  ADDF32          R3H, R3H, R2H                   ; R3H = v1 + x2
+         00000021 009B 
+     111 00000022 E720                  SUBF32          R5H, R5H, R0H                   ; R5H = x2d
+         00000023 002D 
+     112 00000024 E720                  SUBF32          R2H, R3H, R7H                   ; R2H = x1d
+         00000025 01DA 
+     113              ;||         MOV32       R7H, *--SP                              ; [CODEGEN-1534] - removed for fast CR
+     114 00000026 7700                  NOP                                                                     ; delay slot for R2H
+     115 00000027 E203                  MOV32           *+XAR4[2], R5H                  ; save x2
+         00000028 05D4 
+     116 00000029 E203                  MOV32           *+XAR4[0], R2H                  ; save x1
+         0000002a 02C4 
+     117                      .if FASTCR_DF22_C3 = 0
+     118 0000002b E2AE              MOV32       R7H, *--SP, UNC
+         0000002c 07BE 
+     119 0000002d E2AE              MOV32       R6H, *--SP, UNC
+         0000002e 06BE 
+     120 0000002f E2AE                  MOV32           R5H, *--SP, UNC
+         00000030 05BE 
+     121 00000031 E2AE              MOV32       R4H, *--SP, UNC
+         00000032 04BE 
+     122                      .else
+     123                              RESTORE
+     124                      .endif
+     125 00000033 0006                  LRETR
+     126                              .endasmfunc
+     127              
+     128                              .end
+
+No Assembly Errors, No Assembly Warnings
